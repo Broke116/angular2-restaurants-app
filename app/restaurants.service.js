@@ -25,7 +25,7 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map'], fun
             RestaurantsService = (function () {
                 function RestaurantsService(_http) {
                     this._http = _http;
-                    this._url = 'http://jsonplaceholder.typicode.com/posts';
+                    this._url = 'http://jsonplaceholder.typicode.com/posts?_start=0&_end=10';
                 }
                 RestaurantsService.prototype.getRestaurants = function () {
                     return this._http.get(this._url)
