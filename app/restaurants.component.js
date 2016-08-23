@@ -1,4 +1,4 @@
-System.register(['angular2/core', './restaurants.service.ts', 'angular2/http'], function(exports_1, context_1) {
+System.register(['angular2/core', './restaurants.service', 'angular2/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,30 +10,38 @@ System.register(['angular2/core', './restaurants.service.ts', 'angular2/http'], 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, restaurants_service_ts_1, http_1;
+    var core_1, restaurants_service_1, http_1;
     var RestaurantComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (restaurants_service_ts_1_1) {
-                restaurants_service_ts_1 = restaurants_service_ts_1_1;
+            function (restaurants_service_1_1) {
+                restaurants_service_1 = restaurants_service_1_1;
             },
             function (http_1_1) {
                 http_1 = http_1_1;
             }],
         execute: function() {
             RestaurantComponent = (function () {
-                function RestaurantComponent() {
+                function RestaurantComponent(_restaurantsService) {
+                    this._restaurantsService = _restaurantsService;
                 }
+                RestaurantComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this._restaurantsService.getRestaurants()
+                        .subscribe(function (data) {
+                        _this.restaurants = data;
+                    });
+                };
                 RestaurantComponent = __decorate([
                     core_1.Component({
                         selector: 'restaurant',
                         templateUrl: './src/restaurant.template.html',
-                        providers: [restaurants_service_ts_1.RestaurantsService, http_1.HTTP_PROVIDERS]
+                        providers: [restaurants_service_1.RestaurantsService, http_1.HTTP_PROVIDERS]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [restaurants_service_1.RestaurantsService])
                 ], RestaurantComponent);
                 return RestaurantComponent;
             }());
