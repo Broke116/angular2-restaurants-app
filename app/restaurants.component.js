@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './restaurants.service.ts', 'angular2/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,28 +10,35 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var AppComponent;
+    var core_1, restaurants_service_ts_1, http_1;
+    var RestaurantComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (restaurants_service_ts_1_1) {
+                restaurants_service_ts_1 = restaurants_service_ts_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            RestaurantComponent = (function () {
+                function RestaurantComponent() {
                 }
-                AppComponent = __decorate([
+                RestaurantComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        templateUrl: './src/index.template.html'
+                        selector: 'restaurant',
+                        templateUrl: './src/restaurant.template.html',
+                        providers: [restaurants_service_ts_1.RestaurantsService, http_1.HTTP_PROVIDERS]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], RestaurantComponent);
+                return RestaurantComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("RestaurantComponent", RestaurantComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=restaurants.component.js.map
