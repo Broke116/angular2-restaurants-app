@@ -1,4 +1,4 @@
-System.register(['angular2/core', './restaurants.service', 'angular2/http', './custom.filter'], function(exports_1, context_1) {
+System.register(['angular2/core', './restaurants.service', 'angular2/http', './filters/custom.filter', './filters/OrderBy.filter'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './restaurants.service', 'angular2/http', './c
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, restaurants_service_1, http_1, custom_filter_1;
+    var core_1, restaurants_service_1, http_1, custom_filter_1, OrderBy_filter_1;
     var RestaurantComponent;
     return {
         setters:[
@@ -25,6 +25,9 @@ System.register(['angular2/core', './restaurants.service', 'angular2/http', './c
             },
             function (custom_filter_1_1) {
                 custom_filter_1 = custom_filter_1_1;
+            },
+            function (OrderBy_filter_1_1) {
+                OrderBy_filter_1 = OrderBy_filter_1_1;
             }],
         execute: function() {
             RestaurantComponent = (function () {
@@ -43,7 +46,7 @@ System.register(['angular2/core', './restaurants.service', 'angular2/http', './c
                         selector: 'restaurant',
                         templateUrl: './src/restaurant.template.html',
                         providers: [restaurants_service_1.RestaurantsService, http_1.HTTP_PROVIDERS],
-                        pipes: [custom_filter_1.CustomPipe]
+                        pipes: [custom_filter_1.CustomPipe, OrderBy_filter_1.OrderBy]
                     }), 
                     __metadata('design:paramtypes', [restaurants_service_1.RestaurantsService])
                 ], RestaurantComponent);

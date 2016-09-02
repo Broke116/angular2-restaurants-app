@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from 'angular2/core';
 
-@Pipe({name:'custom'})
+@Pipe({ name:'custom' })
 
 export class CustomPipe implements PipeTransform {
     transform(value:string,args:string[]){
