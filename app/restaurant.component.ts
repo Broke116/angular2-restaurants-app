@@ -1,5 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { DataTable } from 'angular2-datatable/datatable';
 
 import { Restaurant } from './model/restaurant';
 import { RestaurantsService } from './restaurants.service';
@@ -9,8 +10,8 @@ import { RestaurantsService } from './restaurants.service';
   templateUrl: '/src/restaurant.template.html'
 })
 
-export class RestaurantComponent implements OnInit { 
-    restaurants: Restaurant[];
+export class RestaurantComponent implements OnInit {
+    private restaurants;
     errorMessage: string = '';
 
     constructor(
@@ -18,8 +19,7 @@ export class RestaurantComponent implements OnInit {
 
     getAll() {
         this.restaurantService.getAll()
-            .subscribe(
-                restaurants => this.restaurants = restaurants);
+            .subscribe((data) => { this.restaurants = data; })
     }
 
     ngOnInit(): void {

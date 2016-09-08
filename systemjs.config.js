@@ -16,6 +16,8 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+      'angular2-datatable': 'npm:angular2-datatable',
+      'lodash': 'npm:lodash/lodash.js',
     },
     packages: {
       app: {
@@ -28,7 +30,9 @@
       'angular2-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
-      }
+      },
+      'angular2-datatable': { defaultExtension: 'js' },
+      'lodash':                     { defaultExtension: 'js' }
     }
   });
 })(this);

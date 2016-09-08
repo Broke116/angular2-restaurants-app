@@ -28,7 +28,7 @@ System.register(['@angular/core', './restaurants.service'], function(exports_1, 
                 }
                 getAll() {
                     this.restaurantService.getAll()
-                        .subscribe(restaurants => this.restaurants = restaurants);
+                        .subscribe((data) => { this.restaurants = data; });
                 }
                 ngOnInit() {
                     this.getAll();

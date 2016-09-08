@@ -5,17 +5,19 @@ import { BrowserModule  } from '@angular/platform-browser'
 import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component'
+import { DataTableDirectives } from 'angular2-datatable/datatable';
 import { RestaurantComponent } from './restaurant.component'
 import { RestaurantsService } from './restaurants.service';
 
 @NgModule({
   imports: [ 
     BrowserModule,
-    HttpModule
+    HttpModule    
   ],
   declarations: [ 
       AppComponent,
-      RestaurantComponent
+      RestaurantComponent,
+      DataTableDirectives,
   ],
   providers: [
     RestaurantsService

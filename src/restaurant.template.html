@@ -1,6 +1,33 @@
-<h1>bbb</h1>
-<ul>
-    <li *ngFor="let item of restaurants">
-        {{item.title}}
-    </li>
-</ul>
+<table class="table table-hover" [mfData]="restaurants" #mf="mfDataTable" [mfRowsOnPage]="10">
+    <thead>
+    <tr>
+        <th>
+            userid
+        </th>
+        <th>
+            id
+        </th>
+        <th>
+            <mfDefaultSorter by="title">Title</mfDefaultSorter>
+        </th>
+        <th>
+            body
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of mf.data">
+        <td>{{ item.userId }}</td>
+        <td>{{ item.id }}</td>
+        <td>{{ item.title }}</td>
+        <td>{{ item.body }}</td>
+    </tr>
+    </tbody>    
+    <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>
