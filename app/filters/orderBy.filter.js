@@ -18,10 +18,9 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            OrderBy = (function () {
-                function OrderBy() {
-                }
-                OrderBy._orderByComparator = function (a, b) {
+            let OrderBy_1;
+            let OrderBy = OrderBy_1 = class OrderBy {
+                static _orderByComparator(a, b) {
                     if ((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))) {
                         if (a.toLowerCase() < b.toLowerCase())
                             return -1;
@@ -35,9 +34,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             return 1;
                     }
                     return 0;
-                };
-                OrderBy.prototype.transform = function (value, _a) {
-                    var _b = _a[0], config = _b === void 0 ? '+' : _b;
+                }
+                transform(value, [config = '+']) {
                     if (!Array.isArray(value))
                         return value;
                     if (!Array.isArray(config) || (Array.isArray(config) && config.length == 1)) {
@@ -52,8 +50,8 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                 : propertyToCheck;
                             return value.sort(function (a, b) {
                                 return !desc
-                                    ? OrderBy._orderByComparator(a[property], b[property])
-                                    : -OrderBy._orderByComparator(a[property], b[property]);
+                                    ? OrderBy_1._orderByComparator(a[property], b[property])
+                                    : -OrderBy_1._orderByComparator(a[property], b[property]);
                             });
                         }
                     }
@@ -65,21 +63,20 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                                     ? config[i].substr(1)
                                     : config[i];
                                 var comparison = !desc ?
-                                    OrderBy._orderByComparator(a[property], b[property])
-                                    : -OrderBy._orderByComparator(a[property], b[property]);
+                                    OrderBy_1._orderByComparator(a[property], b[property])
+                                    : -OrderBy_1._orderByComparator(a[property], b[property]);
                                 if (comparison != 0)
                                     return comparison;
                             }
                             return 0;
                         });
                     }
-                };
-                OrderBy = __decorate([
-                    core_1.Pipe({ name: 'order' }), 
-                    __metadata('design:paramtypes', [])
-                ], OrderBy);
-                return OrderBy;
-            }());
+                }
+            };
+            OrderBy = OrderBy_1 = __decorate([
+                core_1.Pipe({ name: 'order' }), 
+                __metadata('design:paramtypes', [])
+            ], OrderBy);
             exports_1("OrderBy", OrderBy);
         }
     }

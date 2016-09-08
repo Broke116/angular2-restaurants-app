@@ -1,18 +1,6 @@
-<table class="table table-responsive table-hover">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="#item of restaurants">
-      <td>{{ item.id | order }}</td>
-      <td>{{ item.title }}</td>
-      <td>{{ item.body | custom:30 }}</td>
-      <td><a href="{{ item.id }}">Detail</a> <a href="{{ item.id }}">Edit</a> <a href="{{ item.id }}">Delete</a></td>
-    </tr>
-  </tbody>
-</table>
+<h1>bbb</h1>
+<ul>
+    <li *ngFor="let item of restaurants">
+        {{item.title}}
+    </li>
+</ul>

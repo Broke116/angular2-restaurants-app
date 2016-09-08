@@ -1,4 +1,4 @@
-System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/http'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,33 +10,40 @@ System.register(['angular2/http', 'angular2/core', 'rxjs/add/operator/map'], fun
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var http_1, core_1;
+    var core_1, http_1;
     var RestaurantsService;
     return {
         setters:[
-            function (http_1_1) {
-                http_1 = http_1_1;
-            },
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (_1) {}],
+            function (http_1_1) {
+                http_1 = http_1_1;
+            }],
         execute: function() {
-            RestaurantsService = (function () {
-                function RestaurantsService(_http) {
+            let RestaurantsService = class RestaurantsService {
+                constructor(_http) {
                     this._http = _http;
                     this._url = 'http://jsonplaceholder.typicode.com/posts';
                 }
-                RestaurantsService.prototype.getRestaurants = function () {
+                getAll() {
                     return this._http.get(this._url)
-                        .map(function (res) { return res.json(); });
-                };
-                RestaurantsService = __decorate([
-                    core_1.Injectable(), 
-                    __metadata('design:paramtypes', [http_1.Http])
-                ], RestaurantsService);
-                return RestaurantsService;
-            }());
+                        .map(this.extractData)
+                        .catch(this.handleError);
+                }
+                extractData(res) {
+                    let body = res.json();
+                    return body || {};
+                }
+                handleError(error) {
+                    console.error('An error occurred', error);
+                    return Promise.reject(error.message || error);
+                }
+            };
+            RestaurantsService = __decorate([
+                core_1.Injectable(), 
+                __metadata('design:paramtypes', [http_1.Http])
+            ], RestaurantsService);
             exports_1("RestaurantsService", RestaurantsService);
         }
     }

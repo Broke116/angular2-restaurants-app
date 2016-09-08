@@ -1,7 +1,7 @@
-import { Http, Response } from 'angular2/http'
-import { Injectable } from 'angular2/core'
+import { Injectable } from '@angular/core'
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+
 import { Restaurant } from './model/restaurant'; 
 
 @Injectable()
@@ -10,8 +10,19 @@ export class RestaurantsService {
 
     constructor(private _http: Http) { }
 
-    getRestaurants() : Observable<Restaurant[]> {
+    getAll() : Observable<Restaurant[]> {
         return this._http.get(this._url)
-                   .map(res => res.json());
+                   .map(this.extractData)
+                   .catch(this.handleError);
+    }
+
+    private extractData(res: Response) {
+        let body = res.json();
+        return body || { };
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
     }
 }

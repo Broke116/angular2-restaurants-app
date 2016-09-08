@@ -1,10 +1,8 @@
-import { Component } from 'angular2/core';
-import { RestaurantComponent } from './restaurants.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  templateUrl: './src/index.template.html',
-  directives: [RestaurantComponent]
+  templateUrl: '/src/index.template.html'
 })
 
 export class AppComponent { }

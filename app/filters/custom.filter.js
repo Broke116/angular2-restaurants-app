@@ -18,21 +18,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            CustomPipe = (function () {
-                function CustomPipe() {
-                }
-                CustomPipe.prototype.transform = function (value, args) {
+            let CustomPipe = class CustomPipe {
+                transform(value, args) {
                     var limit = (args && args[0]) ? parseInt(args[0]) : 10;
                     if (value) {
                         return value.substring(0, limit) + "...";
                     }
-                };
-                CustomPipe = __decorate([
-                    core_1.Pipe({ name: 'custom' }), 
-                    __metadata('design:paramtypes', [])
-                ], CustomPipe);
-                return CustomPipe;
-            }());
+                }
+            };
+            CustomPipe = __decorate([
+                core_1.Pipe({ name: 'custom' }), 
+                __metadata('design:paramtypes', [])
+            ], CustomPipe);
             exports_1("CustomPipe", CustomPipe);
         }
     }
