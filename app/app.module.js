@@ -1,4 +1,4 @@
-System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.component', './filters/custom.filter', './restaurant.component', './restaurants.service'], function(exports_1, context_1) {
+System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.routing', './app.component', './filters/custom.filter', './restaurant.component', './restaurants.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, http_1, app_component_1, custom_filter_1, restaurant_component_1, restaurants_service_1;
+    var core_1, platform_browser_1, http_1, app_routing_1, app_component_1, custom_filter_1, restaurant_component_1, restaurants_service_1;
     var AppModule;
     return {
         setters:[
@@ -23,6 +23,9 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
             },
             function (http_1_1) {
                 http_1 = http_1_1;
+            },
+            function (app_routing_1_1) {
+                app_routing_1 = app_routing_1_1;
             },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
@@ -43,7 +46,8 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
                 core_1.NgModule({
                     imports: [
                         platform_browser_1.BrowserModule,
-                        http_1.HttpModule
+                        http_1.HttpModule,
+                        app_routing_1.routing
                     ],
                     declarations: [
                         app_component_1.AppComponent,
@@ -52,6 +56,7 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
                         custom_filter_1.CustomPipe,
                     ],
                     providers: [
+                        app_routing_1.appRoutingProviders,
                         restaurants_service_1.RestaurantsService
                     ],
                     bootstrap: [app_component_1.AppComponent]
