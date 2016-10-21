@@ -10,8 +10,8 @@ import { routing,
 import { AppComponent } from './app.component';
 //import { DataTableDirectives } from 'angular2-datatable/datatable';
 import { CustomPipe } from './filters/custom.filter';
-import { RestaurantComponent } from './restaurant.component';
-import { RestaurantsService } from './restaurants.service';
+import { RestaurantComponent } from './restaurants/restaurant.component';
+import { RestaurantsService } from './restaurants/restaurants.service';
 
 @NgModule({
   imports: [ 

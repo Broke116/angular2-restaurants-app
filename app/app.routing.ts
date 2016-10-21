@@ -2,7 +2,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RestaurantComponent } from './restaurant.component';
+import { RestaurantComponent } from './restaurants/restaurant.component';
 
 const appRoutes: Routes = [
   { path: 'restaurants', component: RestaurantComponent },

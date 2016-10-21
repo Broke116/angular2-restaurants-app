@@ -1,4 +1,4 @@
-System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.routing', './app.component', './filters/custom.filter', './restaurant.component', './restaurants.service'], function(exports_1, context_1) {
+System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.routing', './app.component', './filters/custom.filter', './restaurants/restaurant.component', './restaurants/restaurants.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

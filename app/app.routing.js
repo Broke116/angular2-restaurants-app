@@ -1,4 +1,4 @@
-System.register(['@angular/router', './restaurant.component'], function(exports_1, context_1) {
+System.register(['@angular/router', './restaurants/restaurant.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var router_1, restaurant_component_1;
