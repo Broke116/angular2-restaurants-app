@@ -18,8 +18,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            let OrderBy_1;
-            let OrderBy = OrderBy_1 = class OrderBy {
+            let OrderBy_1 = class OrderBy {
                 static _orderByComparator(a, b) {
                     if ((isNaN(parseFloat(a)) || !isFinite(a)) || (isNaN(parseFloat(b)) || !isFinite(b))) {
                         if (a.toLowerCase() < b.toLowerCase())
@@ -73,6 +72,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     }
                 }
             };
+            let OrderBy = OrderBy_1;
             OrderBy = OrderBy_1 = __decorate([
                 core_1.Pipe({ name: 'order' }), 
                 __metadata('design:paramtypes', [])

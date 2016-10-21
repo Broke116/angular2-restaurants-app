@@ -5,7 +5,8 @@ import { BrowserModule  } from '@angular/platform-browser'
 import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component'
-import { DataTableDirectives } from 'angular2-datatable/datatable';
+//import { DataTableDirectives } from 'angular2-datatable/datatable';
+import { CustomPipe } from './filters/custom.filter'
 import { RestaurantComponent } from './restaurant.component'
 import { RestaurantsService } from './restaurants.service';
 
@@ -17,7 +18,8 @@ import { RestaurantsService } from './restaurants.service';
   declarations: [ 
       AppComponent,
       RestaurantComponent,
-      DataTableDirectives,
+      //DataTableDirectives,
+      CustomPipe,
   ],
   providers: [
     RestaurantsService

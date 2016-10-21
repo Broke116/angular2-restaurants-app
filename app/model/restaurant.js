@@ -5,8 +5,8 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            class Restaurant {
-            }
+            Restaurant = class Restaurant {
+            };
             exports_1("Restaurant", Restaurant);
         }
     }

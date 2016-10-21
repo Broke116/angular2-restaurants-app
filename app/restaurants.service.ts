@@ -6,7 +6,8 @@ import { Restaurant } from './model/restaurant';
 
 @Injectable()
 export class RestaurantsService {
-    private _url = 'http://jsonplaceholder.typicode.com/posts';
+    //private _url = 'http://jsonplaceholder.typicode.com/posts';
+    private _url = 'http://localhost:64736/api/Restaurants/57601c6da9fba760e3aeed78';
 
     constructor(private _http: Http) { }
 

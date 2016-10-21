@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['@angular/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -18,7 +18,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            let CustomPipe = class CustomPipe {
+            CustomPipe = class CustomPipe {
                 transform(value, args) {
                     var limit = (args && args[0]) ? parseInt(args[0]) : 10;
                     if (value) {

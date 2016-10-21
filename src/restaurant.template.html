@@ -1,33 +1,28 @@
-<table class="table table-hover" [mfData]="restaurants" #mf="mfDataTable" [mfRowsOnPage]="10">
-    <thead>
-    <tr>
-        <th>
-            userid
-        </th>
-        <th>
-            id
-        </th>
-        <th>
-            <mfDefaultSorter by="title">Title</mfDefaultSorter>
-        </th>
-        <th>
-            body
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of mf.data">
-        <td>{{ item.userId }}</td>
-        <td>{{ item.id }}</td>
-        <td>{{ item.title }}</td>
-        <td>{{ item.body }}</td>
-    </tr>
-    </tbody>    
-    <tfoot>
+<div class="row">
+    <!--<table class="table table-hover" [mfData]="restaurants" #mf="mfDataTable" [mfRowsOnPage]="10">
+        <thead>
         <tr>
-            <td colspan="4">
-                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
-            </td>
+            <th style="width: 5%">userid</th>
+            <th style="width: 5%"><mfDefaultSorter by="id">id</mfDefaultSorter></th>
+            <th style="width: 35%"><mfDefaultSorter by="title">Title</mfDefaultSorter></th>
+            <th style="width: 55%">body</th>
         </tr>
-    </tfoot>
-</table>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of mf.data">
+            <td>{{ item.restaurant_id }} </td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.borough }}</td>
+            <td>{{ item.cuisine }}</td>
+        </tr>
+        </tbody>    
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+        </tfoot>
+    </table>-->
+    Restaurants
+</div>

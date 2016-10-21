@@ -21,17 +21,17 @@ System.register(['@angular/core', './restaurants.service'], function(exports_1, 
                 restaurants_service_1 = restaurants_service_1_1;
             }],
         execute: function() {
-            let RestaurantComponent = class RestaurantComponent {
+            RestaurantComponent = class RestaurantComponent {
                 constructor(restaurantService) {
                     this.restaurantService = restaurantService;
                     this.errorMessage = '';
                 }
-                getAll() {
+                /*getAll() {
                     this.restaurantService.getAll()
                         .subscribe((data) => { this.restaurants = data; });
-                }
+                }*/
                 ngOnInit() {
-                    this.getAll();
+                    //this.getAll();      
                 }
             };
             RestaurantComponent = __decorate([

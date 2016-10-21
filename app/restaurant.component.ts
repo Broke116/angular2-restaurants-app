@@ -1,6 +1,6 @@
 import { Component, OnInit  } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { DataTable } from 'angular2-datatable/datatable';
+//import { DataTable } from 'angular2-datatable/datatable';
 
 import { Restaurant } from './model/restaurant';
 import { RestaurantsService } from './restaurants.service';
@@ -17,12 +17,12 @@ export class RestaurantComponent implements OnInit {
     constructor(
         private restaurantService: RestaurantsService) { }
 
-    getAll() {
+    /*getAll() {
         this.restaurantService.getAll()
-            .subscribe((data) => { this.restaurants = data; })
-    }
+            .subscribe((data) => { this.restaurants = data; });
+    }*/
 
     ngOnInit(): void {
-      this.getAll();
+      //this.getAll();      
     }
  }

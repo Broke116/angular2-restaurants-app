@@ -1,4 +1,4 @@
-System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.component', 'angular2-datatable/datatable', './restaurant.component', './restaurants.service'], function(exports_1, context_1) {
+System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.component', './filters/custom.filter', './restaurant.component', './restaurants.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, http_1, app_component_1, datatable_1, restaurant_component_1, restaurants_service_1;
+    var core_1, platform_browser_1, http_1, app_component_1, custom_filter_1, restaurant_component_1, restaurants_service_1;
     var AppModule;
     return {
         setters:[
@@ -27,8 +27,8 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
             },
-            function (datatable_1_1) {
-                datatable_1 = datatable_1_1;
+            function (custom_filter_1_1) {
+                custom_filter_1 = custom_filter_1_1;
             },
             function (restaurant_component_1_1) {
                 restaurant_component_1 = restaurant_component_1_1;
@@ -37,7 +37,7 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
                 restaurants_service_1 = restaurants_service_1_1;
             }],
         execute: function() {
-            let AppModule = class AppModule {
+            AppModule = class AppModule {
             };
             AppModule = __decorate([
                 core_1.NgModule({
@@ -48,7 +48,8 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
                     declarations: [
                         app_component_1.AppComponent,
                         restaurant_component_1.RestaurantComponent,
-                        datatable_1.DataTableDirectives,
+                        //DataTableDirectives,
+                        custom_filter_1.CustomPipe,
                     ],
                     providers: [
                         restaurants_service_1.RestaurantsService

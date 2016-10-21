@@ -21,10 +21,11 @@ System.register(['@angular/core', '@angular/http'], function(exports_1, context_
                 http_1 = http_1_1;
             }],
         execute: function() {
-            let RestaurantsService = class RestaurantsService {
+            RestaurantsService = class RestaurantsService {
                 constructor(_http) {
                     this._http = _http;
-                    this._url = 'http://jsonplaceholder.typicode.com/posts';
+                    //private _url = 'http://jsonplaceholder.typicode.com/posts';
+                    this._url = 'http://localhost:64736/api/Restaurants/57601c6da9fba760e3aeed78';
                 }
                 getAll() {
                     return this._http.get(this._url)
