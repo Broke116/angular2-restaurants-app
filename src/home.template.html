@@ -1,6 +1,8 @@
 <div class="home-page">
-    <h1>Restaurant search application<span></span></h1>
-    <span>Find nearby restaurants</span>
+    <div class="header-home">
+        <h1>Restaurant search application<span></span></h1>
+        <span>Find nearby restaurants</span>
+    </div>
     <div class="search-panel">
         <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)" >
             <div class="input-group">
@@ -11,5 +13,24 @@
                 </div>           
             </div>
         </form>
-    </div> <!-- search-panel -->
+    </div> <!-- search-panel -->    
 </div>
+<div class="clearFix"></div>
+<div [hidden]="totalRest == 0" id="bottomanchor" class="bottom-section">
+    <!--<ul *ngFor="let rest of restaurants">
+        <li>{{ rest.Name }}</li>
+    </ul>-->
+    <div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px;border-bottom: 0 none">
+        <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
+        <input #gb type="text" pInputText size="50" style="float:left" placeholder="Filter">
+    </div>
+    <p-dataTable #dt [value]="restaurants" [rows]="10" [paginator]="true" [pageLinks]="4" sortMode="multiple" [globalFilter]="gb">
+        <header>
+            <div class="ui-helper-clearfix">
+                Restaurants
+            </div>
+        </header>
+        <footer>There are {{ totalRest }} restaurants</footer>   
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true"></p-column>
+    </p-dataTable>   
+</div>    

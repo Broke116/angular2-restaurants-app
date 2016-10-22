@@ -9,7 +9,8 @@ import { RestaurantsService } from '../restaurants/restaurants.service';
 })
 export class HomeComponent implements OnInit {
     restaurants: Restaurant[];
-    totalRest: number;
+    cols: any[];
+    totalRest: number = 0;
     submitted: boolean = false;
     data: string;
 
@@ -24,7 +25,13 @@ export class HomeComponent implements OnInit {
             });
     }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        this.cols = [
+            {field: 'Name', header: 'Name'},
+            {field: 'Borough', header: 'Borough'},
+            {field: 'Cuisine', header: 'Cuisine'}
+        ]; 
+    }
 
     onSubmit(data: any): void { 
         this.submitted = true; 

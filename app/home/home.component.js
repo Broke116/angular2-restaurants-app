@@ -24,6 +24,7 @@ System.register(['@angular/core', '../restaurants/restaurants.service'], functio
             HomeComponent = class HomeComponent {
                 constructor(restaurantService) {
                     this.restaurantService = restaurantService;
+                    this.totalRest = 0;
                     this.submitted = false;
                 }
                 getAll(value) {
@@ -35,7 +36,13 @@ System.register(['@angular/core', '../restaurants/restaurants.service'], functio
                         console.log(this.restaurants);
                     });
                 }
-                ngOnInit() { }
+                ngOnInit() {
+                    this.cols = [
+                        { field: 'Name', header: 'Name' },
+                        { field: 'Borough', header: 'Borough' },
+                        { field: 'Cuisine', header: 'Cuisine' }
+                    ];
+                }
                 onSubmit(data) {
                     this.submitted = true;
                     this.getAll(data.searchValue);
