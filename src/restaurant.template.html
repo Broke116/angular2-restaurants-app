@@ -1,33 +1,16 @@
 <div class="row">
-    <!--<table class="table table-hover" [mfData]="restaurants" #mf="mfDataTable" [mfRowsOnPage]="10">
-        <thead>
-        <tr>
-            <th style="width: 5%">userid</th>
-            <th style="width: 5%"><mfDefaultSorter by="id">id</mfDefaultSorter></th>
-            <th style="width: 35%"><mfDefaultSorter by="title">Title</mfDefaultSorter></th>
-            <th style="width: 55%">body</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let item of mf.data">
-            <td>{{ item.restaurant_id }} </td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.borough }}</td>
-            <td>{{ item.cuisine }}</td>
-        </tr>
-        </tbody>    
-        <tfoot>
-            <tr>
-                <td colspan="4">
-                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
-                </td>
-            </tr>
-        </tfoot>
-    </table>-->
     <br/>
-    <p-dataTable [value]="restaurants">
-        <header>Restaurants</header>
+    <div class="ui-widget-header ui-helper-clearfix" style="padding:4px 10px;border-bottom: 0 none">
+        <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
+        <input #gb type="text" pInputText size="50" style="float:left" placeholder="Filter">
+    </div>
+    <p-dataTable #dt [value]="restaurants" [rows]="10" [paginator]="true" [pageLinks]="4" sortMode="multiple" [globalFilter]="gb">
+        <header>
+            <div class="ui-helper-clearfix">
+                Restaurants  <button type="button" pButton icon="fa fa-file-o" iconPos="left" label="CSV" (click)="dt.exportCSV()" style="float:right"></button>
+            </div>
+        </header>
         <footer>There are {{ totalRest }} restaurants</footer>   
-        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable]="true"></p-column>
     </p-dataTable>    
 </div>

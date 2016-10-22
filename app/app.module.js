@@ -51,7 +51,8 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
                         platform_browser_1.BrowserModule,
                         http_1.HttpModule,
                         app_routing_1.routing,
-                        primeng_1.DataTableModule
+                        primeng_1.DataTableModule,
+                        primeng_1.ButtonModule
                     ],
                     declarations: [
                         app_component_1.AppComponent,

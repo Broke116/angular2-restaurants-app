@@ -1,6 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-//import { DataTable } from 'angular2-datatable/datatable';
 
 import { Restaurant } from '../model/restaurant';
 import { RestaurantsService } from './restaurants.service';

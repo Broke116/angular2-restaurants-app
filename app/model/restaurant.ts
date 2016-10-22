@@ -1,9 +1,4 @@
-export class Restaurant {
-    /*userId: number;
-    id: number;
-    title: string;
-    body: string;*/
-    //_id: number;
+export class Restaurant {    
     restaurant_id: number;    
     Name: string;
     Borough; string;

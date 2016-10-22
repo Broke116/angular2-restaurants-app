@@ -13,14 +13,15 @@ import { CustomPipe } from './filters/custom.filter';
 import { RestaurantComponent } from './restaurants/restaurant.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
 
-import { DataTableModule,SharedModule } from 'primeng/primeng';
+import { ButtonModule,DataTableModule,SharedModule } from 'primeng/primeng';
 
 @NgModule({
   imports: [ 
     BrowserModule,
     HttpModule,
     routing,
-    DataTableModule    
+    DataTableModule,
+    ButtonModule    
   ],
   declarations: [ 
       AppComponent,
