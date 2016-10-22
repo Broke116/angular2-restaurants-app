@@ -24,10 +24,9 @@ System.register(['@angular/core', '@angular/http'], function(exports_1, context_
             RestaurantsService = class RestaurantsService {
                 constructor(_http) {
                     this._http = _http;
-                    //private _url = 'http://jsonplaceholder.typicode.com/posts';
-                    this._url = 'http://localhost:64736/api/Restaurants';
                 }
-                getAll() {
+                getAll(url) {
+                    this._url = url;
                     return this._http.get(this._url)
                         .map(this.extractData)
                         .catch(this.handleError);

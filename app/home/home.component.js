@@ -1,4 +1,4 @@
-System.register(['@angular/core'], function(exports_1, context_1) {
+System.register(['@angular/core', '../restaurants/restaurants.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,25 +10,43 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, restaurants_service_1;
     var HomeComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (restaurants_service_1_1) {
+                restaurants_service_1 = restaurants_service_1_1;
             }],
         execute: function() {
             HomeComponent = class HomeComponent {
-                constructor() {
+                constructor(restaurantService) {
+                    this.restaurantService = restaurantService;
+                    this.submitted = false;
+                }
+                getAll(value) {
+                    this.restaurantService.getAll('http://localhost:64736/api/Restaurants?$filter=Borough%20eq%20%27' + value + '%27')
+                        .subscribe((data) => {
+                        this.restaurants = data;
+                        this.totalRest = data.length;
+                        console.log(this.totalRest);
+                        console.log(this.restaurants);
+                    });
                 }
                 ngOnInit() { }
+                onSubmit(data) {
+                    this.submitted = true;
+                    this.getAll(data.searchValue);
+                }
             };
             HomeComponent = __decorate([
                 core_1.Component({
                     selector: 'home',
                     templateUrl: '/src/home.template.html'
                 }), 
-                __metadata('design:paramtypes', [])
+                __metadata('design:paramtypes', [restaurants_service_1.RestaurantsService])
             ], HomeComponent);
             exports_1("HomeComponent", HomeComponent);
         }

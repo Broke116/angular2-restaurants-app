@@ -19,7 +19,7 @@ export class RestaurantComponent implements OnInit {
         private restaurantService: RestaurantsService) { }
 
     getAll() {
-        this.restaurantService.getAll()
+        this.restaurantService.getAll("http://localhost:64736/api/Restaurants")
             .subscribe((data) => { this.restaurants = data; this.totalRest = data.length; });
     }
 

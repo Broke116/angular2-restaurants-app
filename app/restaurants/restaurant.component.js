@@ -27,7 +27,7 @@ System.register(['@angular/core', './restaurants.service'], function(exports_1, 
                     this.errorMessage = '';
                 }
                 getAll() {
-                    this.restaurantService.getAll()
+                    this.restaurantService.getAll("http://localhost:64736/api/Restaurants")
                         .subscribe((data) => { this.restaurants = data; this.totalRest = data.length; });
                 }
                 ngOnInit() {
