@@ -1,0 +1,123 @@
+html, body { height:100%; }
+
+body {
+    color: #ECECEC;
+    background: url(../img/background.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x:hidden;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+
+body.inmap {overflow: hidden; transition: 0.3s;}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #333;
+    text-decoration: none;
+    transition:0.3s;
+}
+
+.home-page {    
+    z-index: 9;
+    text-align: center;
+    position: absolute;
+    width: 1200px;
+    top: 50%;
+    margin-top: -180px;
+    left: 50%;
+    margin-left: -600px;
+    white-space: normal;
+}
+
+.home-page h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+.home-page h1 span {
+    display: block;
+    width: 150px;
+    height: 1px;
+    background: #47A5F5;
+    margin: 40px auto;
+}
+
+.home-page span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+    color: #ffffff;
+    line-height: 36px;
+}
+
+/* search panel */
+
+.search-panel {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.search-panel input {
+    height: 55px;
+    border: 0px;
+    border-radius: 3px;
+    color: #8c8c8c;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 0px 20px;
+}
+.search-panel input:focus, .btn_cat button:focus, .btn_search button:focus, .input-group-btn {outline: none; box-shadow: none;}
+.search-panel .btn_cat button span {
+    color: #322F44;
+    font-size: 16px;
+    display: block;
+    overflow: hidden;
+    padding: 10px 0px;
+}
+
+.btn_search button {
+    height: 55px;
+    padding: 0px 50px;
+    font-size: 18px;
+    margin-left: 30px !important;
+    border-radius: 3px !important;
+}
+
+.fea_block {
+    padding: 110px 0px 48px;
+    background: #ffffff;
+}
+.fea_block .fea_item {
+    margin-bottom: 62px;
+}
+.fea_block .fea_item h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #33244A;
+    margin-bottom: 20px;
+}
+.fea_block .fea_item h3 i {
+    font-size: 32px;
+    margin-top: -5px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    color: #218DEA;
+}
+.fea_block .fea_item span {
+    font-size: 15px;
+    color: #333333;
+    line-height: 24px;
+    font-weight: 300;
+}
