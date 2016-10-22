@@ -6,7 +6,7 @@ import { RestaurantComponent } from './restaurants/restaurant.component';
 
 const appRoutes: Routes = [
   { path: 'restaurants', component: RestaurantComponent },
-  //{ path: '', component: AppComponent }
+  { path: '', component: AppComponent }
 ];
 
 export const appRoutingProviders: any[] = [

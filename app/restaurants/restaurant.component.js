@@ -26,12 +26,18 @@ System.register(['@angular/core', './restaurants.service'], function(exports_1, 
                     this.restaurantService = restaurantService;
                     this.errorMessage = '';
                 }
-                /*getAll() {
+                getAll() {
                     this.restaurantService.getAll()
-                        .subscribe((data) => { this.restaurants = data; });
-                }*/
+                        .subscribe((data) => { this.restaurants = data; this.totalRest = data.length; });
+                }
                 ngOnInit() {
-                    //this.getAll();      
+                    this.getAll();
+                    this.cols = [
+                        { field: 'restaurant_id', header: 'Id' },
+                        { field: 'Name', header: 'Name' },
+                        { field: 'Borough', header: 'Borough' },
+                        { field: 'Cuisine', header: 'Cuisine' }
+                    ];
                 }
             };
             RestaurantComponent = __decorate([

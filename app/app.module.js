@@ -1,4 +1,4 @@
-System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.routing', './app.component', './filters/custom.filter', './restaurants/restaurant.component', './restaurants/restaurants.service'], function(exports_1, context_1) {
+System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browser', '@angular/http', './app.routing', './app.component', './filters/custom.filter', './restaurants/restaurant.component', './restaurants/restaurants.service', 'primeng/primeng'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, http_1, app_routing_1, app_component_1, custom_filter_1, restaurant_component_1, restaurants_service_1;
+    var core_1, platform_browser_1, http_1, app_routing_1, app_component_1, custom_filter_1, restaurant_component_1, restaurants_service_1, primeng_1;
     var AppModule;
     return {
         setters:[
@@ -38,6 +38,9 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
             },
             function (restaurants_service_1_1) {
                 restaurants_service_1 = restaurants_service_1_1;
+            },
+            function (primeng_1_1) {
+                primeng_1 = primeng_1_1;
             }],
         execute: function() {
             AppModule = class AppModule {
@@ -47,13 +50,13 @@ System.register(['./rxjs-extensions', '@angular/core', '@angular/platform-browse
                     imports: [
                         platform_browser_1.BrowserModule,
                         http_1.HttpModule,
-                        app_routing_1.routing
+                        app_routing_1.routing,
+                        primeng_1.DataTableModule
                     ],
                     declarations: [
                         app_component_1.AppComponent,
                         restaurant_component_1.RestaurantComponent,
-                        //DataTableDirectives,
-                        custom_filter_1.CustomPipe,
+                        custom_filter_1.CustomPipe
                     ],
                     providers: [
                         app_routing_1.appRoutingProviders,

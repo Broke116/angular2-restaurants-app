@@ -5,7 +5,7 @@ export class Restaurant {
     body: string;*/
     //_id: number;
     restaurant_id: number;    
-    name: string;
-    borough; string;
-    cuisine: string;
+    Name: string;
+    Borough; string;
+    Cuisine: string;
 }

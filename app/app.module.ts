@@ -8,22 +8,24 @@ import { routing,
          appRoutingProviders }  from './app.routing';
 
 import { AppComponent } from './app.component';
-//import { DataTableDirectives } from 'angular2-datatable/datatable';
+
 import { CustomPipe } from './filters/custom.filter';
 import { RestaurantComponent } from './restaurants/restaurant.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
+
+import { DataTableModule,SharedModule } from 'primeng/primeng';
 
 @NgModule({
   imports: [ 
     BrowserModule,
     HttpModule,
-    routing    
+    routing,
+    DataTableModule    
   ],
   declarations: [ 
       AppComponent,
       RestaurantComponent,
-      //DataTableDirectives,
-      CustomPipe,
+      CustomPipe
   ],
   providers: [
     appRoutingProviders,

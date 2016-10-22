@@ -2,7 +2,7 @@ import { Component, OnInit  } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 //import { DataTable } from 'angular2-datatable/datatable';
 
-import { Restaurant } from './model/restaurant';
+import { Restaurant } from '../model/restaurant';
 import { RestaurantsService } from './restaurants.service';
 
 @Component({
@@ -11,18 +11,27 @@ import { RestaurantsService } from './restaurants.service';
 })
 
 export class RestaurantComponent implements OnInit {
-    private restaurants;
+    restaurants: Restaurant[];
+    cols: any[];
+    totalRest: number;
     errorMessage: string = '';
 
     constructor(
         private restaurantService: RestaurantsService) { }
 
-    /*getAll() {
+    getAll() {
         this.restaurantService.getAll()
-            .subscribe((data) => { this.restaurants = data; });
-    }*/
+            .subscribe((data) => { this.restaurants = data; this.totalRest = data.length; });
+    }
 
     ngOnInit(): void {
-      //this.getAll();      
+      this.getAll();
+
+      this.cols = [
+            {field: 'restaurant_id', header: 'Id'},
+            {field: 'Name', header: 'Name'},
+            {field: 'Borough', header: 'Borough'},
+            {field: 'Cuisine', header: 'Cuisine'}
+        ];      
     }
  }

@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core'
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Restaurant } from './model/restaurant'; 
+import { Restaurant } from '../model/restaurant'; 
 
 @Injectable()
 export class RestaurantsService {
     //private _url = 'http://jsonplaceholder.typicode.com/posts';
-    private _url = 'http://localhost:64736/api/Restaurants/57601c6da9fba760e3aeed78';
+    private _url = 'http://localhost:64736/api/Restaurants';
 
     constructor(private _http: Http) { }
 

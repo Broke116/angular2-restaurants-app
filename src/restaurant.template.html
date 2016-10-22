@@ -24,5 +24,10 @@
             </tr>
         </tfoot>
     </table>-->
-    Restaurants
+    <br/>
+    <p-dataTable [value]="restaurants">
+        <header>Restaurants</header>
+        <footer>There are {{ totalRest }} restaurants</footer>   
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+    </p-dataTable>    
 </div>
