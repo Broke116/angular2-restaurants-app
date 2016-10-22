@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 
 import { CustomPipe } from './filters/custom.filter';
 import { RestaurantComponent } from './restaurants/restaurant.component';
+import { HomeComponent } from './home/home.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
 
 import { ButtonModule,DataTableModule,SharedModule } from 'primeng/primeng';
@@ -26,6 +27,7 @@ import { ButtonModule,DataTableModule,SharedModule } from 'primeng/primeng';
   declarations: [ 
       AppComponent,
       RestaurantComponent,
+      HomeComponent,
       CustomPipe
   ],
   providers: [
